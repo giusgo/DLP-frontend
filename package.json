@@ -1,0 +1,16 @@
+{
+    "name": "dlp-frontend",
+    "version": "1.0.0",
+    "description": "Front-end for my Databases class Lab Project.",
+    "main": "index.js",
+    "scripts": {
+        "dev": "parcel src/index.html -p 5044",
+        "build": "parcel build src/index.html"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "parcel": "^2.10.0"
+    }
+}
