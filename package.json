@@ -10,7 +10,6 @@
     "author": "giusgo",
     "license": "GPL-2.0",
     "devDependencies": {
-        //"@parcel/transformer-vue": "^2.10.0",
         "parcel": "^2.10.0"
     },
     "dependencies": {
