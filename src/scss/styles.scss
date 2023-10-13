@@ -1,0 +1,20 @@
+@import "bootstrap/scss/bootstrap";
+
+:root {
+    --spotify-primary: #1db954;
+    --spotify-secondary: #191414;
+
+    --spotify-primary-dark: #116e32;
+    --spotify-secondary-light: white;
+}
+
+/* DEFAULT COLORS */
+.btn {
+    background-color: var(--spotify-primary);
+    color: var(--spotify-secondary);
+}
+
+.btn:hover {
+    background-color: var(--spotify-primary-dark);
+    color: var(--spotify-secondary-light);
+}

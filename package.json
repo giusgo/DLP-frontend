@@ -3,16 +3,19 @@
     "version": "1.0.0",
     "description": "Front-end for my Databases class Lab Project.",
     "scripts": {
-        "dev": "parcel src/index.html -p 5044",
+        "start": "parcel serve src/index.html -p 5044 --public-url / --dist-dir dist",
         "build": "parcel build src/index.html"
     },
     "keywords": [],
     "author": "giusgo",
     "license": "GPL-2.0",
     "devDependencies": {
+        "@parcel/transformer-sass": "^2.10.0",
         "parcel": "^2.10.0"
     },
     "dependencies": {
+        "@popperjs/core": "^2.11.8",
+        "bootstrap": "^5.3.2",
         "chart.js": "^4.4.0"
     }
 }
