@@ -4,18 +4,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>MusicDataInsight</title>
+        <title>Music Data Insight</title>
 
         <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
         <link rel="stylesheet" href="scss/styles.scss">
         <script type="module" src="js/main.js"></script>
+        <script src="https://kit.fontawesome.com/51a9d021a9.js" crossorigin="anonymous"></script>
 
     </head>
     <body>
 
-        <div class="container py-4 px-3 mx-auto">
-            <h1>Hello, Bootstrap and Parcel!</h1>
-            <button class="btn">Primary button</button>
+        <div class="main_container container-fluid">
+
+            <!-- Title row -->
+            <div class="row title">
+                <div class="col">
+                    <img id="logo" src="./img/logo.png" alt="">
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="row footer">
+                <div class="col">
+                   <p>Front-end made with <a id="link-parcel" href="https://parceljs.org/"><i class="fa-solid fa-box"></i> parcel.js</a>. Visit the project repository <a id="link-repo" href=""><i class="fa-brands fa-github"></i> here</a>.</p> 
+                </div>
+            </div>
+
         </div>
 
     </body>

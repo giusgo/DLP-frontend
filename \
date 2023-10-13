@@ -33,7 +33,6 @@ body {
 
     .main_container {
 
-        /* title bar */
         .title {
             height: 80px;
 
@@ -52,7 +51,6 @@ body {
             }
         }
 
-        /* footer bar */
         .footer {
             margin-top: 20px;
             width: 100%;
@@ -68,19 +66,12 @@ body {
                     font-size: 14px;
                     a {
                         text-decoration: none;
-                        padding: 0 5px;
-                        i {
-                            font-size: 18px;
-                        }
                     }
                     a:hover {
                         text-decoration: underline;
                     }
                     #link-parcel {
                         color: orange;
-                    }
-                    #link-repo {
-                        color: white;
                     }
                 }
             }
