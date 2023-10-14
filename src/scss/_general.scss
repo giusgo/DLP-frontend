@@ -1,9 +1,8 @@
 :root {
     --spotify-primary: #1db954;
-    --spotify-secondary: #121212;
-
-    --spotify-primary-dark: #116e32;
-    --spotify-secondary-light: #242424;
+    
+    --ui-background: #000000;
+    --ui-foreground: #121212;
 }
 
 * {
@@ -20,6 +19,6 @@ html {
 /* BODY */
 body {
     height: 100%;
-    background-color: var(--spotify-secondary);
+    background-color: var(--ui-background);
     font-family: 'Montserrat', sans-serif;
 }
