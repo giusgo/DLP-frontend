@@ -1,13 +1,13 @@
 export function RunIntro() {
 
-    let curtain = document.querySelector('.curtain');
-
+    const curtain = document.querySelector('.curtain'),
+        path = document.querySelector('.line-animated path'),
+        length = path.getTotalLength(),
+        logoSpan = document.querySelectorAll('.title-parts'),
+        time = 4000;
 
     setTimeout(() => {
-        /* ==== LOGO ANIMATION ==== (~3500 ms) */ 
-            var path = document.querySelector('.line-animated path');
-        var length = path.getTotalLength();
-
+        /* ==== LOGO ANIMATION ==== (~3500 ms) */
         path.style.transition = path.style.WebkitTransition = 'none';
 
         path.style.strokeDasharray = length + ' ' + length;
@@ -19,8 +19,6 @@ export function RunIntro() {
         path.style.strokeDashoffset = '0';
 
         /* ==== SHOW TITLE ==== */
-            let logoSpan = document.querySelectorAll('.title-parts');
-
         logoSpan.forEach((span, index) => {
             setTimeout(() => {
                 span.classList.add('active');
@@ -28,11 +26,12 @@ export function RunIntro() {
         });
 
         /* ==== CURTAIN REMOVAL ==== */ 
-            setTimeout(() => {
-                curtain.style.top = '-100vh';
-            }, 4000);
+        setTimeout(() => {
+            curtain.style.top = '-100vh';
+        }, time);
 
     });
 
+    return time;
 
 }
