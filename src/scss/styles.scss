@@ -85,21 +85,26 @@ body {
 
         /* graphs container */
         .graphs_container {
-            height: 100%;
+            flex: 1; 
             display: flex;
             flex-direction: column;
             gap: 10px;
 
             .graph_row {
-                height: 100%;
                 display: flex;
                 flex-direction: row;
                 gap: 10px;
+                max-height: 50%;
+                flex: 1;
 
                 .graph {
                     height: 100%;
                     border-radius: 10px;
                     background-color: var(--ui-foreground);
+                    
+                    display: flex;
+                    align-items: center;  
+                    justify-content: center;
                 }
             }
         }
