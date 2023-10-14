@@ -13,28 +13,34 @@ import * as custom from './custom';
     *   Data must have this structure (json format):
     *   - [{x: value, y: value}, { ... }]
     *
-    * */
+* */
 
 export function Plot (position, title, type, data, general_label) {
 
-    /* Set title */
+        /* Set title */
     var chart_title = document.querySelector(`#graph_${position} .graph_title`);
     chart_title.textContent = title;
-        
-    /* Set chart */
 
+    /* Set chart */
+    var chart_config = {
+        label: general_label,
+        data: data.map(row => row.y)
+    }
+
+    if (type === 'line') {
+        chart_config.backgroundColor = custom.BgColor;
+        chart_config.borderColor = custom.BgColor;
+    } else if (type === 'bar') {
+        chart_config.backgroundColor = custom.BgColor;
+    }
+        
     var chart = new Chart(
         document.querySelector(`#graph_${position} canvas`),
         {
             type: type,
             data: {
                 labels: data.map(row => row.x),
-                datasets: [
-                    {
-                        label: general_label,
-                        data: data.map(row => row.y)
-                    }
-                ]
+                datasets: [chart_config]
             },
             options: { plugins: { legend: { labels: { font: {
                 family: custom.FontFamily,

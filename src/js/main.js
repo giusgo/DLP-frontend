@@ -22,6 +22,8 @@ window.addEventListener('DOMContentLoaded', () => {
         { x: 2014, y: 22 },
         { x: 2015, y: 30 },
         { x: 2016, y: 28 },
+        { x: 2017, y: 54 },
+        { x: 2018, y: 18 },
     ];
 
     Plot(3, 'Years', 'pie', data, 'Jeje'); 
