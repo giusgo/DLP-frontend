@@ -1,0 +1,25 @@
+:root {
+    --spotify-primary: #1db954;
+    --spotify-secondary: #121212;
+
+    --spotify-primary-dark: #116e32;
+    --spotify-secondary-light: #242424;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML */
+html {
+    height: 100vh;
+}
+
+/* BODY */
+body {
+    height: 100%;
+    background-color: var(--spotify-secondary);
+    font-family: 'Montserrat', sans-serif;
+}
