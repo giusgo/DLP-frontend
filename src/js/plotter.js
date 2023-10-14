@@ -17,7 +17,7 @@ import * as custom from './custom';
 
 export function Plot (position, title, type, data, general_label) {
 
-        /* Set title */
+    /* Set title */
     var chart_title = document.querySelector(`#graph_${position} .graph_title`);
     chart_title.textContent = title;
 
@@ -28,10 +28,12 @@ export function Plot (position, title, type, data, general_label) {
     }
 
     if (type === 'line') {
-        chart_config.backgroundColor = custom.BgColor;
-        chart_config.borderColor = custom.BgColor;
+        chart_config.backgroundColor = custom.PrimaryColor;
+        chart_config.borderColor = custom.PrimaryColor;
     } else if (type === 'bar') {
-        chart_config.backgroundColor = custom.BgColor;
+        chart_config.backgroundColor = custom.PrimaryColor;
+    } else if (type === 'pie' || type === 'doughnut') {
+        chart_config.backgroundColor = [custom.PrimaryColor, custom.SecondaryColor];
     }
         
     var chart = new Chart(

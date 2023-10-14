@@ -94,7 +94,7 @@ body {
                 display: flex;
                 flex-direction: row;
                 gap: 10px;
-                max-height: 50%;
+                //max-height: 50%;
                 flex: 1;
 
                 .graph {
@@ -106,7 +106,16 @@ body {
                     flex-direction: column;
                     align-items: center;  
                     justify-content: center;
-                    
+
+                    /* Hover effect */
+                    cursor: pointer;
+                    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+                    &:hover {
+                        transform: translateY(-10px); /* Move it up a bit */
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow for floating effect */
+                        filter: brightness(1.4);
+                    }
+
                     .graph_title {
                         color: white;
                         font-weight: bold;

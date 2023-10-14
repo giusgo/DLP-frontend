@@ -1,3 +1,9 @@
+/*
+    *
+    *   Introduction for the dashboard
+    *
+    * */
+
 export function RunIntro() {
 
     const curtain = document.querySelector('.curtain'),

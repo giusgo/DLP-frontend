@@ -26,6 +26,10 @@ window.addEventListener('DOMContentLoaded', () => {
         { x: 2018, y: 18 },
     ];
 
-    Plot(3, 'Years', 'pie', data, 'Jeje'); 
+    /* ==== TIME WRAPPER FOR INTRO ==== */
+    setTimeout(function() {
+        Plot(3, 'Years', 'pie', data, 'Jeje');
+        Plot(2, 'Years', 'line', data, 'Jeje');
+    }, elapsed_time + 500);
 
 });
