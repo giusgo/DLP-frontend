@@ -1,5 +1,6 @@
 import { Plot } from "./plotter";
 import { Request } from "./requests"
+import graphs from '../data/graphs.json'
 
 /*
     *
@@ -7,76 +8,21 @@ import { Request } from "./requests"
     *
     * */
 
-const response = {
-    "title": "Title of the graph",
-    "position": 1,
-    "type": "bar",
-    "datasets": {
-        x: [2016, 2017, 2018, 2019, 2020, 2021, 2022],
-        y: [
-            {y: [50, 22, 33, 14, 15, 7, 11], description: "Jeje"},
-            {y: [40, 22, 13, 41, 45, 1, 34], description: "LOLOL"}
-        ]
-    }
-},
-    response2 = {
-    "title": "Title of the graph",
-    "position": "2",
-    "type": "line",
-    "datasets": {
-        x: [2016, 2017, 2018, 2019, 2020, 2021, 2022],
-        y: [
-            {y: [50, 22, 33, 14, 15, 7, 11], description: "Jeje"},
-            {y: [40, 22, 13, 41, 45, 1, 34], description: "LOLOL"}
-        ]
-    }
-},
-    response3 = {
-    "title": "Title of the graph",
-    "position": 3,
-    "type": "pie",
-    "datasets": {
-        x: [2016, 2017, 2018, 2019, 2020, 2021, 2022],
-        y: [
-            {y: [50, 22, 33, 14, 15, 7, 11], description: "Jeje"},
-            {y: [40, 22, 13, 41, 45, 1, 34], description: "LOLOL"}
-        ]
-    }
-},
-    response4 = {
-    "title": "Title of the graph",
-    "position": 4,
-    "type": "radar",
-    "datasets": {
-        x: [2016, 2017, 2018, 2019, 2020, 2021, 2022],
-        y: [
-            {y: [50, 22, 33, 14, 15, 7, 11], description: "Jeje"},
-            {y: [40, 22, 13, 41, 45, 1, 34], description: "LOLOL"}
-        ]
-    }
-},
-    response5 = {
-    "title": "Title of the graph",
-    "position": 5,
-    "type": "scatter",
-    "datasets": [{
-        "data": [
-            {x: 6, y: 5},
-            {x: 1, y: 7},
-            {x: 5, y: 10},
-            {x: 1, y: 18}
-        ],
-        "description": "descripcion"
-    }]
-};
-
-
 export function RunInitialSetup () {
-    // request all data from the backend 
+    // request all data from the backend
+    // (WIP)
+    //
+    // save all the data in graphs.json
+    // (WIP)
+    //
+    // Plot all the 5 graphs
+    // It is important to pass the entire object (data + chartjsObject)
     
-    Plot(response); 
-    Plot(response2);
-    Plot(response3);
-    Plot(response4);
-    Plot(response5);
+    Plot(graphs[1]); 
+    Plot(graphs[2]);
+    Plot(graphs[3]);
+    Plot(graphs[4]);
+    Plot(graphs[5]);
+
+    console.log(graphs[1].chartjsObject)
 }

@@ -8,44 +8,63 @@ import * as custom from './custom';
     *
     * */
 
-export function Plot (response) {
+export function Plot (graph) {
 
     /* Set title */
-    var chart_title = document.querySelector(`#graph_${response.position} .graph_title`);
-    chart_title.textContent = response.title;
+    var chart_title = document.querySelector(`#graph_${graph.data.position} .graph_title`);
+    chart_title.textContent = graph.data.title;
 
     /* Set chart */
     var data;
 
     // For bar, line, pie or radar
-    if ( response.type != 'scatter' ) {
+    if ( graph.data.type != 'scatter' ) {
         data = {
-            labels: response.datasets.x,
-            datasets: response.datasets.y.map(item => ({
+            labels: graph.data.datasets.x,
+            datasets: graph.data.datasets.y.map(item => ({
                 label: item.description,
                 data: item.y
             }))
         }
 
         // For scatter
-    } else if ( response.type == 'scatter' ) {
+    } else if ( graph.data.type == 'scatter' ) {
         data = {
-            datasets: response.datasets.map(item => ({
+            datasets: graph.data.datasets.map(item => ({
                 label: item.description,
                 data: item.data
             }))
         }
     }
 
-    new Chart(
-        document.querySelector(`#graph_${response.position} canvas`),
+    if (graph.chartjsObject != null) {
+        graph.chartjsObject.destroy();
+    }
+
+    graph.chartjsObject = new Chart(
+        document.querySelector(`#graph_${graph.data.position} canvas`),
         {
-            type: response.type,
+            type: graph.data.type,
             data: data,
-            options: { plugins: { legend: { labels: { font: {
-                family: custom.FontFamily,
-                size: custom.FontSize
-            } } } } }
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: graph.data.xlabel
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: graph.data.ylabel
+                        }
+                    }
+                },
+                plugins: { legend: { labels: { font: {
+                    family: custom.FontFamily,
+                    size: custom.FontSize
+                } } } } }
         }
     );
 
