@@ -55,6 +55,7 @@
             </h1>
         </div> 
 
+        <!-- MOUSE HINT -->
         <div id="mouse">
             <div class="circle"></div>
             <i class="fa-solid fa-arrow-pointer"></i>
@@ -67,6 +68,9 @@
             <div class="row title">
                 <div class="col">
                     <img id="logo" src="./img/logo.png" alt="logo" draggable="false">
+                </div>
+                <div id="help" data-bs-toggle="modal" data-bs-target="#helpModal">
+                    <i class="fa-solid fa-circle-question"></i>
                 </div>
             </div>
 
@@ -99,16 +103,65 @@
                 </div>
 
             </div>
-            
+
 
             <!-- Footer -->
             <div class="row footer">
                 <div class="col">
-                    <p>Front-end made with <a id="link-parcel" href="https://parceljs.org/"><i class="fa-solid fa-box"></i> parcel.js</a>. Visit the project repository <a id="link-repo" href=""><i class="fa-brands fa-github"></i> here</a>.</p> 
+                    <p>Front-end made with <a id="link-parcel" target="_blank" href="https://parceljs.org/"><i class="fa-solid fa-box"></i> parcel.js</a>. Visit the project repository <a id="link-repo" target="_blank" href=""><i class="fa-brands fa-github"></i> here</a>.</p> 
                 </div>
             </div>
 
         </div>
+
+        <!-- HELP MODAL -->
+        <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true" data-bs-theme="dark">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="helpModalLabel">Help & Information</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="section">
+                            <h2>Help</h2>
+                            <p>It is very simple: Click any chart, adjust parameters and observe.</p>
+                        </div>
+                        <div class="section">
+                            <h2>Information</h2>
+
+                            <p>The information displayed here is from a dataset that contains 10+ million Beatport and Spotify audio features. You can read more about the data in:</p>
+                            <div class="img"><a target="_blank" href="https://www.kaggle.com/code/mcfurland/beatport-spotify-visualized"><img src="./img/kaggle.png" alt=""></a></div>
+
+                            <p>The front-end of this webapp was possible thanks to:</p>
+                            <div class="slider">
+                                <div class="imgs-slide">
+                                    <a target="_blank" href="https://getbootstrap.com/" class="tool-link"><img src="./img/bootstrap.png" alt="" class="tool-img"></a>
+                                    <a target="_blank" href="https://www.chartjs.org/" class="tool-link"><img src="./img/chart_js.png" alt="" class="tool-img"></a>
+                                    <a target="_blank" href="https://www.docker.com/" class="tool-link"><img src="./img/docker.png" alt="" class="tool-img"></a>
+                                    <a target="_blank" href="https://parceljs.org/" class="tool-link"><img src="./img/parcel_js.png" alt="" class="tool-img"></a>
+                                    <a target="_blank" href="https://sass-lang.com/documentation/syntax/" class="tool-link"><img src="./img/scss.png" alt="" class="tool-img"></a>
+                                </div>
+                                <div class="imgs-slide">
+                                    <a target="_blank" href="https://getbootstrap.com/" class="tool-link"><img src="./img/bootstrap.png" alt="" class="tool-img"></a>
+                                    <a target="_blank" href="https://www.chartjs.org/" class="tool-link"><img src="./img/chart_js.png" alt="" class="tool-img"></a>
+                                    <a target="_blank" href="https://www.docker.com/" class="tool-link"><img src="./img/docker.png" alt="" class="tool-img"></a>
+                                    <a target="_blank" href="https://parceljs.org/" class="tool-link"><img src="./img/parcel_js.png" alt="" class="tool-img"></a>
+                                    <a target="_blank" href="https://sass-lang.com/documentation/syntax/" class="tool-link"><img src="./img/scss.png" alt="" class="tool-img"></a>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </body>
 </html>

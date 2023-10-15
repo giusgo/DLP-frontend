@@ -27,10 +27,13 @@ window.addEventListener('DOMContentLoaded', () => {
         { x: 2018, y: 18 },
     ];
 
-    /* ==== TIME WRAPPER FOR INTRO ==== */
+    /* Tutorial start before because of timing */
     setTimeout(function() {
-
         RunTutorial();
+    }, elapsed_time - 1000);
+
+    /* ==== TIME WRAPPER FOR GRAPHS ==== */
+    setTimeout(function() {
 
         Plot(3, 'Years', 'pie', data, 'Jeje');
         Plot(2, 'Years', 'line', data, 'Jeje');
