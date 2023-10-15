@@ -15,35 +15,38 @@ import * as custom from './custom';
     *
 * */
 
-export function Plot (position, title, type, data, y_description) {
+export function Plot (response) {
 
     /* Set title */
-    var chart_title = document.querySelector(`#graph_${position} .graph_title`);
-    chart_title.textContent = title;
+    var chart_title = document.querySelector(`#graph_${response.position} .graph_title`);
+    chart_title.textContent = response.title;
 
     /* Set chart */
-    var chart_config = {
-        label: y_description,
-        data: data.map(row => row.y)
+    var data;
+
+    // For bar, line, pie or radar
+    if ( response.type != 'scatter' ) {
+        data = {
+            labels: response.datasets.x,
+            datasets: response.datasets.y.map(item => ({
+                label: item.description,
+                data: item.y
+            }))
+        }
+
+    // For scatter
+    } else if ( response.type === 'scatter' ) {
+        data = {
+            label: response.dataset.description,
+            data: response.dataset.data
+        }
     }
 
-    if (type === 'line') {
-        chart_config.backgroundColor = custom.PrimaryColor;
-        chart_config.borderColor = custom.PrimaryColor;
-    } else if (type === 'bar') {
-        chart_config.backgroundColor = custom.PrimaryColor;
-    } else if (type === 'pie' || type === 'doughnut') {
-        chart_config.backgroundColor = [custom.PrimaryColor, custom.SecondaryColor];
-    }
-        
-    var chart = new Chart(
-        document.querySelector(`#graph_${position} canvas`),
+    new Chart(
+        document.querySelector(`#graph_${response.position} canvas`),
         {
-            type: type,
-            data: {
-                labels: data.map(row => row.x),
-                datasets: [chart_config]
-            },
+            type: response.type,
+            data: data,
             options: { plugins: { legend: { labels: { font: {
                 family: custom.FontFamily,
                 size: custom.FontSize

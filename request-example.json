@@ -1,0 +1,24 @@
+{
+    "title": "My title"
+    "position": 1,
+    "type": "line",
+    // en el caso de bar, line, pie o radar:
+    "datasets": {
+        x: ['Rock', 'Salsa'],
+        y: [
+            {y: [6, 7, 9], description: "Oyentes"},
+            {y: [5, 11, 3], description: "Artistas"}
+        ]
+    },
+    // en el caso de scatter:
+    "dataset": {
+        "data": [
+            {x: 6, y: 5},
+            {x: 1, y: 7}
+        ],
+        "description": "descripcion"
+    }
+}
+
+// Varios datasets solo sirven si es line o radar
+// En el caso de bar o pie solo 1 dataset
