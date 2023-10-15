@@ -8,13 +8,6 @@ import * as custom from './custom';
     *
     * */
 
-/*
-    *
-    *   Data must have this structure (json format):
-    *   - [{x: value, y: value}, { ... }]
-    *
-* */
-
 export function Plot (response) {
 
     /* Set title */
@@ -34,11 +27,13 @@ export function Plot (response) {
             }))
         }
 
-    // For scatter
-    } else if ( response.type === 'scatter' ) {
+        // For scatter
+    } else if ( response.type == 'scatter' ) {
         data = {
-            label: response.dataset.description,
-            data: response.dataset.data
+            datasets: response.datasets.map(item => ({
+                label: item.description,
+                data: item.data
+            }))
         }
     }
 
