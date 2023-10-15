@@ -1,5 +1,6 @@
 import * as bootstrap from 'bootstrap'
 import { RunIntro } from './curtain'
+import { RunTutorial } from './tutorial'
 import { Plot } from './plotter';
 
 /*
@@ -28,8 +29,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     /* ==== TIME WRAPPER FOR INTRO ==== */
     setTimeout(function() {
+
+        RunTutorial();
+
         Plot(3, 'Years', 'pie', data, 'Jeje');
         Plot(2, 'Years', 'line', data, 'Jeje');
+        
     }, elapsed_time + 500);
 
 });

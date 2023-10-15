@@ -15,7 +15,7 @@ import * as custom from './custom';
     *
 * */
 
-export function Plot (position, title, type, data, general_label) {
+export function Plot (position, title, type, data, y_description) {
 
     /* Set title */
     var chart_title = document.querySelector(`#graph_${position} .graph_title`);
@@ -23,7 +23,7 @@ export function Plot (position, title, type, data, general_label) {
 
     /* Set chart */
     var chart_config = {
-        label: general_label,
+        label: y_description,
         data: data.map(row => row.y)
     }
 
