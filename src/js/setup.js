@@ -1,6 +1,8 @@
 import { Plot } from "./plotter";
 import { Request } from "./requests"
 import graphs from '../data/graphs.json'
+import top_data from '../data/top_data.json'
+import date_data from '../data/date_data.json'
 import { LaunchEditor, RequestChange } from "./graph_editor";
 
 /*
@@ -11,6 +13,10 @@ import { LaunchEditor, RequestChange } from "./graph_editor";
 
 const dropdown = document.getElementById('artists-dropdown');
 const request_button = document.getElementById('request-button');
+const top_range = document.getElementById('top-range');
+const date_range = document.getElementById('date-range');
+const top_label = document.getElementById('top-number');
+const date_label = document.getElementById('date-number');
 
 // Sets all the buttons on the page
 function SetButtons () {
@@ -23,6 +29,10 @@ function SetButtons () {
 
     // To request data for an individual graph
     request_button.onclick = function() { RequestChange() };
+
+    // Dynamic labels
+    top_range.oninput = function() { top_label.textContent = top_data[top_range.value] };
+    date_range.oninput = function() { date_label.textContent = date_data[date_range.value] };
 
     // To set elements on dropdown input
     const artists = graphs["artists"];
