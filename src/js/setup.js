@@ -24,5 +24,4 @@ export function RunInitialSetup () {
     Plot(graphs[4]);
     Plot(graphs[5]);
 
-    console.log(graphs[1].chartjsObject)
 }

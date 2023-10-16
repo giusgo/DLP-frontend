@@ -337,4 +337,53 @@ body {
             }
         }
     }
+
+    #graphEditor {
+        .modal-dialog {
+            .modal-content {
+                border: 0px;
+                background: var(--ui-foreground);
+
+                .modal-header {
+                    border: 0px;
+                    h1 {
+                        color: white;
+                    }
+                }
+
+                .modal-body {
+                    width: 100%;
+                    height: 70vh;
+
+                    .graph {
+                        height: 70%;
+                        width: 100%;
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        .graph_title {
+                            color: white;
+                            font-weight: bold;
+                            font-size: 20px;
+                        }
+                    }
+
+                    .editor {
+                        height: 30%;
+                        width: 100%;
+                    }
+                }
+
+                .modal-footer {
+                    border: 0px;
+                    button {
+                        background: var(--spotify-primary);
+                    }
+                }
+            }
+        }
+    }
 }

@@ -44,8 +44,6 @@ function DeleteMouse (mouse, loop) {
     document.addEventListener('click', function() {
         mouse.remove();
         clearInterval(loop);
-
-        console.log('xd')
     }, { once: true }); 
 }
 
