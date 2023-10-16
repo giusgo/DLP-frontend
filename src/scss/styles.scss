@@ -442,8 +442,11 @@ body {
 
                 .modal-footer {
                     border: 0px;
-                    button {
+                    .request {
                         background: var(--spotify-primary);
+                    }
+                    .close {
+                        background: var(--ui-foreground);
                     }
                 }
             }

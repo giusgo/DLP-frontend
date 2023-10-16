@@ -22,7 +22,6 @@ const queryTypes = {
 export function Request(position, top = '', date = '', artist = '') {
     return new Promise((resolve, reject) => {
         var url = `${baseUrl}/${queryTypes[position]}?top=${top}&date=1999-${date}&artist=${artist}`;
-        console.log(url)
 
         fetch(url)
             .then(response => {

@@ -1,6 +1,7 @@
 import { Plot } from "./plotter";
 import { Request } from "./requests"
 import graphs from '../data/graphs.json'
+import { SetButtons } from "./graph_editor";
 
 /*
     *
@@ -16,8 +17,6 @@ export function RunInitialSetup () {
             .then(data => {
                 // Save all the data in graph.json
                 graphs[i].data = data; 
-                
-                console.log(graphs[i]);
 
                 // Graph 
                 Plot(graphs[i]);
@@ -30,6 +29,8 @@ export function RunInitialSetup () {
     Request("artists")
         .then(data => {
             graphs["artists"] = data.x;  
+
+            SetButtons();
         })
 
     // Plot all the 5 graphs

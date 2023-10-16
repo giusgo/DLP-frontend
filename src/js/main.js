@@ -2,7 +2,6 @@ import * as bootstrap from 'bootstrap'
 import { RunIntro } from './curtain'
 import { RunTutorial } from './tutorial'
 import { RunInitialSetup } from './setup';
-import { SetButtons } from './graph_editor';
 
 /*
     *
@@ -12,7 +11,6 @@ import { SetButtons } from './graph_editor';
 
 window.addEventListener('DOMContentLoaded', () => {
 
-    SetButtons();
     
     /* ==== RUN ANIMATED INTRO ==== */
     var elapsed_time = RunIntro();

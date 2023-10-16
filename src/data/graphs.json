@@ -1,23 +1,38 @@
 {
     "1": {
         data: null,
-        chartjsObject: null
+        chartjsObject: null,
+        top: 0,
+        date: 23,
+        artist: ""
     },
     "2": {
         data: null,
-        chartjsObject: null
+        chartjsObject: null,
+        top: 0,
+        date: 23,
+        artist: ""
     },
     "3": {
         data: null,
-        chartjsObject: null
+        chartjsObject: null,
+        top: 0,
+        date: 23,
+        artist: ""
     },
     "4": {
         data: null,
-        chartjsObject: null
+        chartjsObject: null,
+        top: 0,
+        date: 23,
+        artist: ""
     },
     "5": {
         data: null,
-        chartjsObject: null
+        chartjsObject: null,
+        top: 0,
+        date: 23,
+        artist: ""
     },
     "6": {
         data: null,
