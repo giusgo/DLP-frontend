@@ -5,7 +5,7 @@
     * */
 
 // Just for testing rn, this may have to change to bundle with backend
-const host = '20.115.66.20';
+const host = '127.0.0.1';
 const port = '3000';
 
 const baseUrl = `http://${host}:${port}/api`;
