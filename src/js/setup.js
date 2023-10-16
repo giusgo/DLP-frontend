@@ -1,13 +1,45 @@
 import { Plot } from "./plotter";
 import { Request } from "./requests"
 import graphs from '../data/graphs.json'
-import { SetButtons } from "./graph_editor";
+import { LaunchEditor } from "./graph_editor";
 
 /*
     *
     *   Module to be executed once
     *
     * */
+
+const dropdown = document.getElementById('artists-dropdown');
+const request_button = document.getElementById('request-button');
+const top_range = document.getElementById('top-range');
+const date_range = document.getElementById('date-range');
+
+// Sets all the buttons on the page
+function SetButtons () {
+    
+    // To display graph editor for all graphs
+    for (let i = 1; i <= 5; i++) {
+        let button = document.getElementById(`graph_${i}`);
+        button.onclick = function() { LaunchEditor(i) };
+    }
+
+    // To set range inputs at initial values
+    top_range.value = 0;
+    date_range.value = 23;
+
+    // To request data for an individual graph
+    request_button.onclick = '';
+
+    // To set elements on dropdown input
+    const artists = graphs["artists"];
+    for (const artist of artists) {
+        const option = document.createElement('option');
+        option.text = artist;
+        option.value = artist; // You can set a value for each option if needed
+        dropdown.appendChild(option);
+    }
+
+}
 
 export function RunInitialSetup () {
 
@@ -26,16 +58,13 @@ export function RunInitialSetup () {
             }); 
     } 
 
+    // Request artists
     Request("artists")
         .then(data => {
             graphs["artists"] = data.x;  
 
             SetButtons();
         })
-
-    // Plot all the 5 graphs
-    // It is important to pass the entire object (data + chartjsObject)
-    
-    // Plot(graphs[1]); 
-
 }
+
+
