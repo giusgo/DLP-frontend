@@ -1,5 +1,5 @@
 import { Plot } from "./plotter";
-import { Request } from "./requests"
+import { InitialSetupRequest } from "./requests"
 import graphs from '../data/graphs.json'
 
 /*
@@ -23,5 +23,7 @@ export function RunInitialSetup () {
     Plot(graphs[3]);
     Plot(graphs[4]);
     Plot(graphs[5]);
+
+    InitialSetupRequest();
 
 }
