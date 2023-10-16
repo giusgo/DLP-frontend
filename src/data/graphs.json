@@ -2,36 +2,46 @@
     "1": {
         data: null,
         chartjsObject: null,
-        top: 0,
-        date: 23,
+        top_value: 0,
+        date_value: 23,
+        top_label: "10",
+        date_label: "2023",
         artist: ""
     },
     "2": {
         data: null,
         chartjsObject: null,
-        top: 0,
-        date: 23,
+        top_value: 0,
+        date_value: 23,
+        top_label: "10",
+        date_label: "2023",
         artist: ""
     },
     "3": {
         data: null,
         chartjsObject: null,
-        top: 0,
-        date: 23,
+        top_value: 0,
+        date_value: 23,
+        top_label: "10",
+        date_label: "2023",
         artist: ""
     },
     "4": {
         data: null,
         chartjsObject: null,
-        top: 0,
-        date: 23,
+        top_value: 0,
+        date_value: 23,
+        top_label: "10",
+        date_label: "2023",
         artist: ""
     },
     "5": {
         data: null,
         chartjsObject: null,
-        top: 0,
-        date: 23,
+        top_value: 0,
+        date_value: 23,
+        top_label: "10",
+        date_label: "2023",
         artist: ""
     },
     "6": {
