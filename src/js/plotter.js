@@ -19,6 +19,7 @@ export function Plot (graph) {
 
     // For bar, line, pie or radar
     if ( graph.data.type != 'scatter' ) {
+        
         data = {
             labels: graph.data.datasets.x,
             datasets: graph.data.datasets.y.map(item => ({
@@ -27,12 +28,28 @@ export function Plot (graph) {
             }))
         }
 
+        if (graph.data.type == 'pie') {
+            data.datasets.forEach(dataset => {
+                dataset.backgroundColor = custom.Colors;
+            });
+        } else if (graph.data.type == 'bar') {
+            data.datasets.forEach(dataset => {
+                dataset.backgroundColor = custom.PrimaryColor;
+            });
+        } else if (graph.data.type == 'line') {
+            data.datasets.forEach(dataset => {
+                dataset.backgroundColor = custom.PrimaryColor;
+                dataset.borderColor = custom.PrimaryColor;
+            });
+        }
+
         // For scatter
     } else if ( graph.data.type == 'scatter' ) {
         data = {
             datasets: graph.data.datasets.map(item => ({
                 label: item.description,
-                data: item.data
+                data: item.data,
+                backgroundColor: custom.PrimaryColor
             }))
         }
     }
