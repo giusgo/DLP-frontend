@@ -33,7 +33,7 @@ function Loop(mouse, circle, pointer) {
                     mouse.classList.remove('active');
                 }, 400);
             }, 500)
-        }, 950);
+        }, 800);
     }, 2000);
 
     return tutorial_loop;

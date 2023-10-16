@@ -4,6 +4,7 @@ import graphs from '../data/graphs.json'
 import top_data from '../data/top_data.json'
 import date_data from '../data/date_data.json'
 import { LaunchEditor, RequestChange } from "./graph_editor";
+import { RunTutorial } from "./tutorial"
 
 /*
     *
@@ -56,6 +57,10 @@ export function RunInitialSetup () {
 
                 // Graph 
                 Plot(graphs[i]);
+
+                if (i == 5) {
+                    RunTutorial(); 
+                }
             })
             .catch(error => {
                 console.error(error);
