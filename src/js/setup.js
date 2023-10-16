@@ -1,5 +1,5 @@
 import { Plot } from "./plotter";
-import { InitialSetupRequest } from "./requests"
+import { Request } from "./requests"
 import graphs from '../data/graphs.json'
 
 /*
@@ -9,21 +9,32 @@ import graphs from '../data/graphs.json'
     * */
 
 export function RunInitialSetup () {
-    // request all data from the backend
-    // (WIP)
-    //
-    // save all the data in graphs.json
-    // (WIP)
-    //
+
+    // Request all data from the backend
+    for (let i = 1; i <= 5; i++) {
+        Request(i, 10, 2023)
+            .then(data => {
+                // Save all the data in graph.json
+                graphs[i].data = data; 
+                
+                console.log(graphs[i]);
+
+                // Graph 
+                Plot(graphs[i]);
+            })
+            .catch(error => {
+                console.error(error);
+            }); 
+    } 
+
+    Request("artists")
+        .then(data => {
+            graphs["artists"] = data.x;  
+        })
+
     // Plot all the 5 graphs
     // It is important to pass the entire object (data + chartjsObject)
     
-    Plot(graphs[1]); 
-    Plot(graphs[2]);
-    Plot(graphs[3]);
-    Plot(graphs[4]);
-    Plot(graphs[5]);
-
-    InitialSetupRequest();
+    // Plot(graphs[1]); 
 
 }
